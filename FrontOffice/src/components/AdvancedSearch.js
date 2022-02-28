@@ -36,26 +36,27 @@ function AdvancedSearch() {
   }
 
   const getStatus = () =>{
-    api.get('/status',{
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': 'Bearer '+localStorage.getItem('token')
-      }
-    }).then(res =>{
-      setStatus(res.data);
-      console.log(status);
-    }).catch(function(error){
-      if (error.response) {
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      } else if (error.request) {
-        console.log(error.request);
-      } else {
-        console.log('Error', error.message);
-      }
-      console.log(error.config);
-    });
+    setStatus(['Terminé', 'Nonterminé']);
+    // api.get('/signalement/status',{
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Authorization': 'Bearer '+localStorage.getItem('token')
+    //   }
+    // }).then(res =>{
+    //   setStatus(res.data);
+    //   console.log(status);
+    // }).catch(function(error){
+    //   if (error.response) {
+    //     console.log(error.response.data);
+    //     console.log(error.response.status);
+    //     console.log(error.response.headers);
+    //   } else if (error.request) {
+    //     console.log(error.request);
+    //   } else {
+    //     console.log('Error', error.message);
+    //   }
+    //   console.log(error.config);
+    // });
   }
 
   return (

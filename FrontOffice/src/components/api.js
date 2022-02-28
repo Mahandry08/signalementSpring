@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:9005/api/'
+    baseURL: 'https://signalementcloud.herokuapp.com/api/'
 });
 
 export default api;
